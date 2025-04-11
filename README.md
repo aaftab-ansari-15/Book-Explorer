@@ -129,15 +129,14 @@ The application uses a service-based approach for API integration:
 - Pagination support with offset-based loading
 - Infinite scroll implementation with scroll threshold detection
 
-## API Integration
-
-The application uses the Google Books API for fetching book data:
-
 - Base URL: `https://www.googleapis.com/books/v1/volumes`
+
+```
 - Search parameters:
   - `q`: Search query (supports `intitle:`, `inauthor:`, etc.)
   - `maxResults`: Number of results (default: 10, max: 40)
   - `startIndex`: For pagination
+```
 
 Example API call:
 ```javascript
