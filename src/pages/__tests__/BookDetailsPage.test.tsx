@@ -1,11 +1,9 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter, Routes, Route, MemoryRouter } from 'react-router-dom';
+import { Routes, Route, MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from '../../redux/store';
 import { BookDetailsPage } from '../BookDetailsPage';
 import { getBookById } from '../../services/bookService';
-import { BookContent } from '../../components/BookContent';
 
 // Mock the book service
 jest.mock('../../services/bookService', () => ({

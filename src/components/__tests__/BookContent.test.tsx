@@ -1,8 +1,6 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BookContent } from '../BookContent';
 import { useAppDispatch } from '../../redux/hooks';
-import { addToFavorites, removeFromFavorites } from '../../redux/bookSlice';
 
 // Mock the Redux hooks
 jest.mock('../../redux/hooks', () => ({
