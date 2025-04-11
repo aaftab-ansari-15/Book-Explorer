@@ -123,22 +123,23 @@ The application uses Redux Toolkit with a well-structured state management appro
 - Normalized state structure with separate arrays for books and favorites
 - Efficient selectors for checking favorite status
 
-### API Integration
+## API Integration
+
 The application uses a service-based approach for API integration:
-- Centralized bookService for API calls
-- Pagination support with offset-based loading
-- Infinite scroll implementation with scroll threshold detection
 
-- Base URL: `https://www.googleapis.com/books/v1/volumes`
+- **Centralized `bookService`** for all API calls
+- **Pagination support** with offset-based loading
+- **Infinite scroll** implementation with scroll threshold detection
 
-```
-- Search parameters:
-  - `q`: Search query (supports `intitle:`, `inauthor:`, etc.)
-  - `maxResults`: Number of results (default: 10, max: 40)
-  - `startIndex`: For pagination
-```
+### Base URL
+https://www.googleapis.com/books/v1/volumes
 
-Example API call:
+### Search Parameters
+- `q`: Search query (supports `intitle:`, `inauthor:`, etc.)
+- `maxResults`: Number of results (default: 10, max: 40)
+- `startIndex`: Pagination offset (0-based)
+
+### Example API Call
 ```javascript
 fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:react&maxResults=20`)
 ```
