@@ -101,6 +101,34 @@ The application includes several performance optimizations to ensure smooth user
      - When scrolling up, remove newest 20 items and fetch previous 20 items
      - This ensures constant memory usage while providing seamless infinite scroll experience
 
+
+## Technical Approach
+
+### Routing
+The application uses React Router with a simple and efficient routing structure:
+- Basic route configuration with three main routes: home, favorites, and book details
+- Lazy loading for the BookDetailsPage to optimize initial load time
+- Suspense boundaries for smooth loading transitions
+- While the routing structure is simple, it doesn't include nested routes or protected routes, which could be beneficial for future feature expansion
+
+### Form Handling
+The application implements a hybrid approach to form handling:
+- Search form state is managed through Redux (searchSlice) for persistence and sharing across components
+- Form validation is handled at the component level with immediate feedback
+- Complex query building logic for the Google Books API
+
+### State Management
+The application uses Redux Toolkit with a well-structured state management approach:
+- Two main slices: searchSlice and booksSlice
+- Normalized state structure with separate arrays for books and favorites
+- Efficient selectors for checking favorite status
+
+### API Integration
+The application uses a service-based approach for API integration:
+- Centralized bookService for API calls
+- Pagination support with offset-based loading
+- Infinite scroll implementation with scroll threshold detection
+
 ## API Integration
 
 The application uses the Google Books API for fetching book data:
