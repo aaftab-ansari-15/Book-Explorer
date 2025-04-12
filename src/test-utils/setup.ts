@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 
-// Add TextEncoder polyfill for React Router v7
 if (typeof TextEncoder === 'undefined') {
     const { TextEncoder, TextDecoder } = require('util');
     global.TextEncoder = TextEncoder;

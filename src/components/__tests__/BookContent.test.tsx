@@ -2,12 +2,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { BookContent } from '../BookContent';
 import { useAppDispatch } from '../../redux/hooks';
 
-// Mock the Redux hooks
 jest.mock('../../redux/hooks', () => ({
     useAppDispatch: jest.fn(),
 }));
 
-// Mock the Lucide icons
 jest.mock('lucide-react', () => ({
     Heart: () => <div>Heart Icon</div>,
     ChevronDown: () => <div>ChevronDown Icon</div>,

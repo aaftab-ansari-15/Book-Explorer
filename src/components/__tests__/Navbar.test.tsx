@@ -7,7 +7,6 @@ import { useAppDispatch } from '../../redux/hooks';
 import { clearSearchParams } from '../../redux/searchSlice';
 import { clearBooks } from '../../redux/bookSlice';
 
-// Mock the Redux hooks
 jest.mock('../../redux/hooks', () => ({
     useAppDispatch: jest.fn(),
 }));
@@ -81,12 +80,10 @@ describe('Navbar', () => {
     it('navigates to the correct routes when clicking links', () => {
         renderNavbar();
 
-        // Click Favorites link
         const favoritesLink = screen.getByText('Favorites');
         fireEvent.click(favoritesLink);
         expect(window.location.pathname).toBe('/favorites');
 
-        // Click Search link
         const searchLink = screen.getByText('Search');
         fireEvent.click(searchLink);
         expect(window.location.pathname).toBe('/');

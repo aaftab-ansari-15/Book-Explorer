@@ -7,7 +7,6 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { setSearchParams } from '../../redux/searchSlice';
 import { SearchParams } from '../../types';
 
-// Mock the Redux hooks
 jest.mock('../../redux/hooks', () => ({
     useAppDispatch: jest.fn(),
     useAppSelector: jest.fn(),
@@ -17,7 +16,6 @@ jest.mock('../../redux/searchSlice', () => ({
     setSearchParams: jest.fn(),
 }));
 
-// Mock the alert function
 const mockAlert = jest.fn();
 global.alert = mockAlert;
 

@@ -1,17 +1,14 @@
-// src/services/bookService.ts
 import axios, { AxiosResponse } from 'axios';
-import { Book } from '../types'; // Assuming you have a Book type defined
+import { Book } from '../types';
 
 const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 
-// Interface for search parameters (adjust based on your needs)
 interface SearchBooksParams {
     query: string;
     startIndex: number;
     maxResults: number;
 }
 
-// Fetch a single book by ID
 export const getBookById = async (id: string): Promise<Book> => {
     try {
         const response: AxiosResponse<Book> = await axios({
@@ -28,7 +25,6 @@ export const getBookById = async (id: string): Promise<Book> => {
     }
 };
 
-// Fetch a list of books based on search parameters
 export const searchBooks = async ({
     query,
     startIndex,

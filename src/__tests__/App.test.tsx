@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 import App from '../App';
 
-// Mock the pages to avoid loading actual components
 jest.mock('../pages/SearchPage', () => ({
     SearchPage: () => <div>Search Page</div>,
 }));
@@ -16,7 +15,6 @@ jest.mock('../pages/BookDetailsPage', () => ({
     BookDetailsPage: () => <div>Book Details Page</div>,
 }));
 
-// Mock the Loader2 component
 jest.mock('lucide-react', () => ({
     Loader2: () => <div>Loading...</div>,
     Search: () => <div>Search Icon</div>,

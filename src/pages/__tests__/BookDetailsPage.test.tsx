@@ -5,12 +5,10 @@ import { store } from '../../redux/store';
 import { BookDetailsPage } from '../BookDetailsPage';
 import { getBookById } from '../../services/bookService';
 
-// Mock the book service
 jest.mock('../../services/bookService', () => ({
     getBookById: jest.fn(),
 }));
 
-// Mock the BookContent component
 jest.mock('../../components/BookContent', () => ({
     BookContent: ({ book }: { book: any }) => (
         <div>
@@ -21,7 +19,6 @@ jest.mock('../../components/BookContent', () => ({
     ),
 }));
 
-// Mock the Loader2 and ArrowLeft components
 jest.mock('lucide-react', () => ({
     Loader2: () => <div>Loading...</div>,
     ArrowLeft: () => <div>Arrow Left</div>,
